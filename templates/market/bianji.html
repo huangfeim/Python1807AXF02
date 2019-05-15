@@ -1,0 +1,68 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>发起话题</title>
+{% endblock %}
+
+{% block EXTCSS %}
+    <link rel="stylesheet" href="{% static '/market/css/bianji.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="register">
+    <div class="back"><a href="{% url 'axf:market' 104749 0 0 %}"> <span class=" glyphicon glyphicon-remove "></span> </a> </div>
+
+    <form action="{% url 'axf:bianji' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">title</span>
+            <input id="productname" type="text" class="form-control" placeholder="productname" aria-describedby="basic-addon1" name="productname">
+        </div>
+        <span class="error" id="titleerr"></span>
+
+        <div class="input-group">
+            <textarea name="productlongname" id="" cols="30" rows="10"></textarea>
+        </div>
+        <span class="error" id="passworderr">密码格式不正确</span>
+
+        <div class="input-group">
+            <select name="categoryid" id="categoryid" >
+                <option value="104749">﻿每日话题</option>
+                <option value="104747">公告圈</option>
+                <option value="103532">游戏圈</option>
+                <option value="103549">读书圈</option>
+                <option value="103536">生活圈</option>
+                <option value="103557">科技圈</option>
+                <option value="103569">露个脸</option>
+				<option value="103575">笑话圈</option>
+				<option value="104958">灌水圈</option>
+				<option value="103581">运动圈</option>
+				<option value="103541">问题圈</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <select name="childcid" id="childcid" >
+				<option value=""></option>
+                <option value="103534">LOL</option>
+                <option value="103533">DNF</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="file" name="file"/>
+        </div>
+
+        <input class="btn btn-primary" value="queding" id="subButton" type="submit">
+    </form>
+</div>
+{% endblock %}
+
+
+
+{% block EXTJS %}
+    <script src="{% static 'market/js/bianji.js' %}"></script>
+{% endblock %}
+

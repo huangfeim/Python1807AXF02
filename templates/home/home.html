@@ -1,0 +1,131 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{# 导入CSS#}
+{% block EXTCSS %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
+{# 标题#}
+{% block title %}
+<title>{{ title }}</title>
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="home">
+        {#    轮播图#}
+            <div class="swiper-container" id="topSwiper">
+                <div class="swiper-wrapper">
+                    {% for wheel in wheels %}
+                        <div class="swiper-slide">
+                            <img src="{{ wheel.img }}" alt="{{ wheel.name }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+
+            <div class="nav">
+                <ul>
+                    {% for nav in navs %}
+                        <li>
+                            {% if forloop.counter == 1  %}
+                                <a href="{% url 'axf:shortshow' %}">
+                                    <img src="{{ nav.img }}" alt="">
+                                    <span>{{ nav.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 2  %}
+                                <a href="{% url 'axf:honor' %}">
+                                    <img src="{{ nav.img }}" alt="">
+                                    <span>{{ nav.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 3  %}
+                                <a href="{% url 'axf:activaty' %}">
+                                    <img src="{{ nav.img }}" alt="">
+                                    <span>{{ nav.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 4  %}
+                                <a href="{% url 'axf:member' 201510402143 0 %}">
+                                    <img src="{{ nav.img }}" alt="">
+                                    <span>{{ nav.name }}</span>
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            <div class="nav">
+                <ul>
+                    {% for must in mustbuys %}
+                        <li>
+                            {% if forloop.counter == 1 %}
+                                <a href="{% url 'axf:member' 201510402144 1%}">
+                                    <img src="{{ must.img }}" alt="">
+                                    <span>{{ must.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 2  %}
+                                <a href="{% url 'axf:XYshortshow' %}">
+                                    <img src="{{ must.img }}" alt="">
+                                    <span>{{ must.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 3  %}
+                                <a href="{% url 'axf:announcement' %}">
+                                    <img src="{{ must.img }}" alt="">
+                                    <span>{{ must.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 4  %}
+                                <a href="{% url 'axf:XXshortshow' %}">
+                                    <img src="{{ must.img }}" alt="">
+                                    <span>{{ must.name }}</span>
+                                </a>
+                            {% endif %}
+
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+            <div class="nav">
+                <ul>
+                    {% for shop in shops %}
+                        <li>
+                            {% if forloop.counter == 1 %}
+                                <a href="{% url 'axf:book' %}">
+                                    <img src="{{ shop.img }}" alt="">
+                                    <span>{{ shop.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 2  %}
+                                <a href="{% url 'axf:xc' %}">
+                                    <img src="{{ shop.img }}" alt="">
+                                    <span>{{ shop.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 3  %}
+                                <a href="http://news.baidu.com">
+                                    <img src="{{ shop.img }}" alt="">
+                                    <span>{{ shop.name }}</span>
+                                </a>
+                            {% elif forloop.counter == 4  %}
+                                <a href="http://127.0.0.1:8000/static/001/index.html">
+                                    <img src="{{ shop.img }}" alt="">
+                                    <span>{{ shop.name }}</span>
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+{% endblock %}
+
+
+
+{# 导入JS#}
+{% block EXTJS %}
+    <script src="{% static 'home/js/home.js' %}"></script>
+{% endblock %}

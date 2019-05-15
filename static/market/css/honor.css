@@ -1,0 +1,38 @@
+.title{
+    text-align: center;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 3rem;
+    color: #fafafa;
+
+    letter-spacing: 0;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+
+
+}
+
+
+.ig{
+    width: 19.9rem;
+    height: 6rem;
+}
+
+li .img{
+    width: 33.3%;
+    height: 5rem;
+    float: left;
+
+    margin-top: 0.5rem;
+}
+
+
+
+
+
+.show{
+    width: 20rem;
+    padding-right: 1rem;
+    border-bottom: 0.5rem solid black;
+
+}
